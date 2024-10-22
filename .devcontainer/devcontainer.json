@@ -1,6 +1,7 @@
 {
 	"image": "mcr.microsoft.com/devcontainers/rust:latest",
 	"features": {
+		"ghcr.io/catpleademoji/bevy-wasm-feature/bevy-wasm:0": {},
 		"ghcr.io/devcontainers-extra/features/node-asdf:0": {}
 	}
 }
