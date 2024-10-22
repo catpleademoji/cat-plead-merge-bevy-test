@@ -1,0 +1,32 @@
+# Instructions
+
+## Dependencies
+
+Ensure the `wasm-bindgen` is installed 
+
+```sh
+cargo install wasm-bindgen-cli
+```
+
+and that `rustup` is targeting `wasm32-unknown-unknown`.
+
+```sh
+rustup target add wasm32-unknown-unknown
+```
+
+## Building
+
+First build the project targeting `wasm32-unknown-unknown`.
+
+Then use `wasm-bindgen` to create the js bindings.
+
+```sh
+cargo build --target wasm32-unknown-unknown
+wasm-bindgen --out-dir ./dist --target web ./target/wasm32-unknown-unknown/debug/cat-plead-merge.wasm
+```
+
+## Release mode
+```sh
+cargo build --release --target wasm32-unknown-unknown
+wasm-bindgen --out-dir ./dist --target web ./target/wasm32-unknown-unknown/release/cat-plead-merge.wasm
+```
