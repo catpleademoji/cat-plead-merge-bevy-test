@@ -49,7 +49,10 @@ const SCORE_COLOR: Color = Color::srgb(1.0, 0.5, 0.5);
 
 fn main() {
     App::new()
-        .add_plugins(DefaultPlugins)
+        .add_plugins(DefaultPlugins.set(AssetPlugin {
+            meta_check: bevy::asset::AssetMetaCheck::Never,
+            ..default()
+        }))
         .insert_resource(Score(0))
         .insert_resource(ClearColor(BACKGROUND_COLOR))
         .add_event::<CollisionEvent>()
